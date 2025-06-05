@@ -1,0 +1,35 @@
+.dashboard {
+  position: relative;
+  text-align: center;
+  color: white;
+  overflow: hidden; /* Ensure the background doesn't overflow */
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  animation: wave 10s ease-in-out infinite;
+  opacity: 0.5; /* Adjust transparency */
+  z-index: -1; /* Send it behind other content */
+}
+
+@keyframes wave {
+  0% {
+      transform: translateX(0);
+  }
+  50% {
+      transform: translateX(-50%);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+h2, p {
+  position: relative; /* Ensure text is above the overlay */
+  z-index: 1;
+}

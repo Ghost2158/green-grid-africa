@@ -2,70 +2,71 @@ import React, { useState } from 'react';
 import './Header.css';
 
 const Header = () => {
-  const [activeButton, setActiveButton] = useState('Home');
+  const [activeButton, setActiveButton] = useState('home');
 
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
-    // Add navigation logic here
-    console.log(`Navigating to: ${buttonName}`);
+    
+    // Smooth scroll to the appropriate section
+    switch(buttonName) {
+      case 'challenges':
+        document.getElementById('challenges')?.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+        break;
+      case 'solutions':
+        document.getElementById('solutions')?.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+        break;
+      default:
+        window.scrollTo({ 
+          top: 0, 
+          behavior: 'smooth' 
+        });
+    }
   };
 
   return (
     <header className="header">
-      <div className="header-container">
-        <h1 className="header-title">GreenGrid Africa</h1>
-
-        <nav className="nav-section" role="navigation" aria-label="Primary navigation">
-          <button
-            className={`nav-btn ${activeButton === 'Home' ? 'active' : ''}`}
-            onClick={() => handleButtonClick('Home')}
-          >
-            Home
-          </button>
-          <button
-            className={`nav-btn ${activeButton === 'Main Dashboard' ? 'active' : ''}`}
-            onClick={() => handleButtonClick('Main Dashboard')}
-          >
-            Main Dashboard
-          </button>
-          <button
-            className={`nav-btn ${activeButton === 'Users Dashboard' ? 'active' : ''}`}
-            onClick={() => handleButtonClick('Users Dashboard')}
-          >
-            Users Dashboard
-          </button>
-          <button
-            className={`nav-btn ${activeButton === 'Operators Dashboard' ? 'active' : ''}`}
-            onClick={() => handleButtonClick('Operators Dashboard')}
-          >
-            Operators Dashboard
-          </button>
-          <button
-            className={`nav-btn ${activeButton === 'AI Predictions' ? 'active' : ''}`}
-            onClick={() => handleButtonClick('AI Predictions')}
-          >
-            AI Predictions
-          </button>
-          <button
-            className={`nav-btn ${activeButton === 'Community Portal' ? 'active' : ''}`}
-            onClick={() => handleButtonClick('Community Portal')}
-          >
-            Community Portal
-          </button>
-          <button
-            className={`nav-btn ${activeButton === 'Reports & Insights' ? 'active' : ''}`}
-            onClick={() => handleButtonClick('Reports & Insights')}
-          >
-            Reports & Insights
-          </button>
-          <button
-            className={`nav-btn contact-btn ${activeButton === 'Contact Us' ? 'active' : ''}`}
-            onClick={() => handleButtonClick('Contact Us')}
-          >
-            Contact Us
-          </button>
-        </nav>
-      </div>
+      <h1 className="header-title">
+        <span>GreenGrid</span> Africa
+      </h1>
+      <nav className="nav-buttons">
+        <button
+          className={`nav-btn ${activeButton === 'home' ? 'active' : ''}`}
+          onClick={() => handleButtonClick('home')}
+        >
+          Home
+        </button>
+        <button
+          className={`nav-btn ${activeButton === 'challenges' ? 'active' : ''}`}
+          onClick={() => handleButtonClick('challenges')}
+        >
+          Challenges
+        </button>
+        <button
+          className={`nav-btn ${activeButton === 'solutions' ? 'active' : ''}`}
+          onClick={() => handleButtonClick('solutions')}
+        >
+          Solutions
+        </button>
+        <button
+          className={`nav-btn ${activeButton === 'impact' ? 'active' : ''}`}
+          onClick={() => handleButtonClick('impact')}
+        >
+          Impact
+        </button>
+        <button
+          className={`nav-btn ${activeButton === 'contact' ? 'active' : ''}`}
+          onClick={() => handleButtonClick('contact')}
+        >
+          Contact
+        </button>
+        <button className="contact-btn">Get Started</button>
+      </nav>
     </header>
   );
 };

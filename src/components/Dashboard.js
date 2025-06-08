@@ -1,124 +1,107 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Dashboard.css';
-import solarBackground from '../assets/solar-background.jpg';
-import image1 from '../assets/pexels-pixabay-371917.jpg';
-import image2 from '../assets/pexels-cristian-rojas-8853511.jpg';
-import image3 from '../assets/pexels-tomfisk-9893727.jpg';
-import image4 from '../assets/pexels-cristian-rojas-8853500.jpg';
 
 const Dashboard = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const navigate = useNavigate();
+
     const slides = [
-        { image: solarBackground, title: "Welcome to GreenGrid Africa" },
-        { image: image1, title: "Sustainable Energy Solutions" },
-        { image: image2, title: "Powering African Communities" },
-        { image: image3, title: "Innovative Technology" },
-        { image: image4, title: "Building a Greener Future" }
+        {
+            image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+            title: 'Sustainable Energy Solutions',
+            description: 'Discover innovative ways to harness renewable energy for a greener future.'
+        },
+        {
+            image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+            title: 'Smart Grid Technology',
+            description: 'Experience the power of intelligent energy distribution systems.'
+        },
+        {
+            image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+            title: 'Community Impact',
+            description: 'See how our solutions are transforming communities across Africa.'
+        }
     ];
 
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrentSlide((prev) => (prev + 1) % slides.length);
         }, 5000);
-
         return () => clearInterval(timer);
-    }, []);
+    }, [slides.length]);
 
-    const nextSlide = () => {
-        setCurrentSlide((prev) => (prev + 1) % slides.length);
-    };
-
-    const prevSlide = () => {
-        setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    const handleGetStarted = () => {
+        navigate('/auth');
     };
 
     return (
         <div className="dashboard">
-            <div className="background-overlay"></div>
-            <div className="welcome-section">
+            <div className="content-sections">
+                <section className="welcome-section">
+                    <h1>Welcome to GreenGrid Africa</h1>
+                    <p>Empowering communities through sustainable energy solutions and smart grid technology.</p>
+                    <button className="get-started-button" onClick={handleGetStarted}>
+                        Get Started
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                    </button>
+                </section>
+
                 <div className="slideshow-container">
-                    <div className="slideshow">
+                    <div className="slideshow" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
                         {slides.map((slide, index) => (
-                            <div
-                                key={index}
-                                className={`slide ${index === currentSlide ? 'active' : ''}`}
-                                style={{ backgroundImage: `url(${slide.image})` }}
-                            >
+                            <div key={index} className="slide">
+                                <img src={slide.image} alt={slide.title} />
                                 <div className="slide-content">
-                                    <h1>{slide.title}</h1>
+                                    <h3>{slide.title}</h3>
+                                    <p>{slide.description}</p>
                                 </div>
                             </div>
                         ))}
                     </div>
-                    <button className="slideshow-btn prev" onClick={prevSlide}>❮</button>
-                    <button className="slideshow-btn next" onClick={nextSlide}>❯</button>
-                    <div className="slideshow-dots">
-                        {slides.map((_, index) => (
-                            <span
-                                key={index}
-                                className={`dot ${index === currentSlide ? 'active' : ''}`}
-                                onClick={() => setCurrentSlide(index)}
-                            />
-                        ))}
-                    </div>
-                </div>
-                <p>Empowering African communities through sustainable energy solutions</p>
-                <div className="welcome-buttons">
-                    <button className="welcome-btn google-btn primary-btn">
-                        <span className="google-icon">G</span>
-                        Get Started
-                    </button>
-                    <button className="welcome-btn google-btn secondary-btn">
-                        <span className="google-icon">L</span>
-                        Learn More
-                    </button>
-                </div>
-            </div>
-
-            <div className="content-sections">
-                <div id="challenges" className="problem-section">
-                    <h2 className="section-title">The Challenge</h2>
-                    <div className="section-content">
-                        <div className="challenge-card">
-                            <h3>Energy Poverty</h3>
-                            <p>Over 600 million Africans live without reliable electricity, trapped in a cycle of energy poverty that limits their potential for growth and development.</p>
-                        </div>
-                        <div className="challenge-card">
-                            <h3>Infrastructure Barriers</h3>
-                            <p>Remote communities face significant challenges in accessing traditional power grids, with high costs and complex logistics making conventional solutions impractical.</p>
-                        </div>
-                        <div className="challenge-card">
-                            <h3>Economic Impact</h3>
-                            <p>Without reliable power, businesses struggle to operate, students can't study after dark, and healthcare facilities can't provide essential services, creating a ripple effect of economic stagnation.</p>
-                        </div>
-                        <div className="challenge-card">
-                            <h3>Environmental Concerns</h3>
-                            <p>Many communities rely on harmful alternatives like kerosene lamps and diesel generators, contributing to both environmental degradation and health risks.</p>
-                        </div>
+                    <div className="slideshow-controls">
+                        <button onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}>
+                            ←
+                        </button>
+                        <button onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}>
+                            →
+                        </button>
                     </div>
                 </div>
 
-                <div id="solutions" className="solution-section">
-                    <h2 className="section-title">Our Solution</h2>
-                    <div className="section-content">
-                        <div className="solution-card">
-                            <h3>Revolutionary Technology</h3>
-                            <p>As GreenGrid Africa, we're pioneering AI-powered microgrid systems that adapt to community needs in real-time, ensuring reliable and efficient energy distribution.</p>
-                        </div>
-                        <div className="solution-card">
-                            <h3>Community Empowerment</h3>
-                            <p>We're not just providing power – we're building sustainable energy ecosystems where communities take ownership of their energy future through our innovative management platforms.</p>
-                        </div>
-                        <div className="solution-card">
-                            <h3>Smart Integration</h3>
-                            <p>Our cutting-edge technology seamlessly integrates renewable energy sources, creating resilient power networks that can withstand environmental challenges and growing demand.</p>
-                        </div>
-                        <div className="solution-card">
-                            <h3>Economic Transformation</h3>
-                            <p>By bringing reliable energy to underserved communities, we're unlocking new economic opportunities, enabling businesses to thrive, and creating a foundation for sustainable growth.</p>
-                        </div>
+                <section id="challenges">
+                    <h2>Challenges We Address</h2>
+                    <div className="challenge-item">
+                        <h3>Energy Access</h3>
+                        <p>Millions of people in Africa lack reliable access to electricity, hindering economic development and quality of life.</p>
                     </div>
-                </div>
+                    <div className="challenge-item">
+                        <h3>Grid Reliability</h3>
+                        <p>Existing power grids often suffer from inefficiencies, leading to frequent outages and energy losses.</p>
+                    </div>
+                    <div className="challenge-item">
+                        <h3>Sustainability</h3>
+                        <p>Traditional energy sources contribute to environmental degradation and climate change.</p>
+                    </div>
+                </section>
+
+                <section id="solutions">
+                    <h2>Our Solutions</h2>
+                    <div className="solution-item">
+                        <h3>Smart Grid Technology</h3>
+                        <p>Implementing advanced monitoring and control systems to optimize energy distribution and reduce losses.</p>
+                    </div>
+                    <div className="solution-item">
+                        <h3>Renewable Energy Integration</h3>
+                        <p>Harnessing solar, wind, and other renewable sources to provide clean, sustainable power.</p>
+                    </div>
+                    <div className="solution-item">
+                        <h3>Community Empowerment</h3>
+                        <p>Training and supporting local communities to maintain and benefit from sustainable energy systems.</p>
+                    </div>
+                </section>
             </div>
         </div>
     );

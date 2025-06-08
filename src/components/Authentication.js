@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './Authentication.css';
 
@@ -12,6 +12,11 @@ const Authentication = () => {
     });
     const navigate = useNavigate();
     const location = useLocation();
+
+    useEffect(() => {
+        // Scroll to top when component mounts
+        window.scrollTo(0, 0);
+    }, []);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -47,14 +52,13 @@ const Authentication = () => {
         <div className="auth-container">
             <button className="back-button" onClick={handleBack}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19 12H5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M12 19L5 12L12 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-                Back to Home
+                Back
             </button>
             <div className="auth-box">
-                <h2>{isSignIn ? 'Sign In' : 'Create Account'}</h2>
-                <form onSubmit={handleSubmit} className="auth-form">
+                <h2>{isSignIn ? 'Sign In' : 'Sign Up'}</h2>
+                <form className="auth-form" onSubmit={handleSubmit}>
                     {!isSignIn && (
                         <div className="form-group">
                             <label htmlFor="name">Full Name</label>
@@ -65,7 +69,6 @@ const Authentication = () => {
                                 value={formData.name}
                                 onChange={handleInputChange}
                                 required
-                                placeholder="Enter your full name"
                             />
                         </div>
                     )}
@@ -78,7 +81,6 @@ const Authentication = () => {
                             value={formData.email}
                             onChange={handleInputChange}
                             required
-                            placeholder="Enter your email"
                         />
                     </div>
                     <div className="form-group">
@@ -90,7 +92,6 @@ const Authentication = () => {
                             value={formData.password}
                             onChange={handleInputChange}
                             required
-                            placeholder="Enter your password"
                         />
                     </div>
                     {!isSignIn && (
@@ -103,7 +104,6 @@ const Authentication = () => {
                                 value={formData.confirmPassword}
                                 onChange={handleInputChange}
                                 required
-                                placeholder="Confirm your password"
                             />
                         </div>
                     )}
@@ -118,12 +118,12 @@ const Authentication = () => {
                     <img src="https://www.google.com/favicon.ico" alt="Google" />
                     Continue with Google
                 </button>
-                <p className="auth-toggle">
+                <div className="auth-toggle">
                     {isSignIn ? "Don't have an account? " : "Already have an account? "}
-                    <button onClick={toggleMode} className="toggle-btn">
+                    <button className="toggle-btn" onClick={toggleMode}>
                         {isSignIn ? 'Sign Up' : 'Sign In'}
                     </button>
-                </p>
+                </div>
             </div>
         </div>
     );

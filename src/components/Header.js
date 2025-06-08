@@ -1,13 +1,21 @@
 import React, { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
   const [activeButton, setActiveButton] = useState('home');
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
     
-    // Smooth scroll to the appropriate section
+    // If we're on the auth page, first navigate to home
+    if (location.pathname === '/auth') {
+      navigate('/');
+    }
+    
+    // Then handle the section scrolling
     switch(buttonName) {
       case 'challenges':
         document.getElementById('challenges')?.scrollIntoView({ 
@@ -29,9 +37,13 @@ const Header = () => {
     }
   };
 
+  const handleGetStarted = () => {
+    navigate('/auth');
+  };
+
   return (
     <header className="header">
-      <h1 className="header-title">
+      <h1 className="header-title" onClick={() => handleButtonClick('home')}>
         <span>GreenGrid</span> Africa
       </h1>
       <nav className="nav-buttons">
@@ -65,7 +77,7 @@ const Header = () => {
         >
           Contact
         </button>
-        <button className="contact-btn">Get Started</button>
+        <button className="contact-btn" onClick={handleGetStarted}>Get Started</button>
       </nav>
     </header>
   );

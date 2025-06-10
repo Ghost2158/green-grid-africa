@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Logo from './Logo';
 import './Header.css';
@@ -9,45 +9,53 @@ const Header = () => {
   const location = useLocation();
   const isAuthPage = location.pathname === '/auth';
 
+  // Update active button based on current route
+  useEffect(() => {
+    const path = location.pathname;
+    if (path === '/challenges') setActiveButton('challenges');
+    else if (path === '/solutions') setActiveButton('solutions');
+    else if (path === '/dashboard') setActiveButton('dashboard');
+    else if (path === '/') setActiveButton('home');
+  }, [location]);
+
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const headerOffset = 100;
+      const elementPosition = section.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
     
     // If we're on the auth page, first navigate to home
     if (location.pathname === '/auth') {
       navigate('/');
+      return;
     }
     
-    // Then handle the section scrolling
+    // Handle navigation
     switch(buttonName) {
       case 'challenges':
-        const challengesSection = document.getElementById('challenges');
-        if (challengesSection) {
-          const headerOffset = 100;
-          const elementPosition = challengesSection.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-        }
+        navigate('/challenges');
         break;
       case 'solutions':
-        const solutionsSection = document.getElementById('solutions');
-        if (solutionsSection) {
-          const headerOffset = 100;
-          const elementPosition = solutionsSection.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-        }
+        navigate('/solutions');
+        break;
+      case 'team':
+        navigate('/team');
+        break;
+      case 'home':
+        navigate('/');
         break;
       default:
-        window.scrollTo({ 
-          top: 0, 
-          behavior: 'smooth' 
-        });
+        navigate('/');
     }
   };
 
@@ -57,7 +65,7 @@ const Header = () => {
 
   return (
     <header className={`header ${isAuthPage ? 'header-minimized' : ''}`}>
-      <div className="logo" onClick={() => handleButtonClick('home')}>
+      <div className="logo-container" onClick={() => handleButtonClick('home')}>
         <Logo />
       </div>
       {!isAuthPage && (
@@ -81,16 +89,10 @@ const Header = () => {
             Solutions
           </button>
           <button
-            className={`nav-btn ${activeButton === 'impact' ? 'active' : ''}`}
-            onClick={() => handleButtonClick('impact')}
+            className={`nav-btn ${activeButton === 'team' ? 'active' : ''}`}
+            onClick={() => handleButtonClick('team')}
           >
-            Impact
-          </button>
-          <button
-            className={`nav-btn ${activeButton === 'contact' ? 'active' : ''}`}
-            onClick={() => handleButtonClick('contact')}
-          >
-            Contact
+            Team
           </button>
           <button className="contact-btn" onClick={handleGetStarted}>Get Started</button>
         </nav>

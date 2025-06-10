@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
 
 * {
     scrollbar-width: none; /* Firefox */
@@ -29,19 +30,46 @@
     --gradient-secondary: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 .dashboard {
     min-height: 100vh;
     background: linear-gradient(135deg, #0a192f, #0077b6);
     color: var(--text-light);
     position: relative;
-    overflow-x: hidden;
     padding-top: 80px;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000;
-    will-change: transform;
+    height: auto;
+    overflow: hidden;
+}
+
+.dashboard::before {
+    content: "";
+    position: absolute;
+    top: -30%;
+    left: -30%;
+    width: 160%;
+    height: 160%;
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(0,180,216,0.18) 0%, rgba(10,25,47,0.12) 60%, transparent 100%);
+    animation: movingSpotlight 18s ease-in-out infinite alternate;
+}
+
+@keyframes movingSpotlight {
+    0% {
+        background-position: 30% 30%;
+    }
+    50% {
+        background-position: 70% 70%;
+    }
+    100% {
+        background-position: 30% 30%;
+    }
 }
 
 /* Energy pulse container */
@@ -349,22 +377,19 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
-    transform: translate3d(0, 0, 0);
-    will-change: transform;
 }
 
 #challenges, #solutions {
-    scroll-margin-top: 100px;
     padding: 3rem 1.5rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     margin: 1.5rem auto;
     width: 90%;
     max-width: 1000px;
     display: block;
     position: relative;
-    transform: translate3d(0, 0, 0);
-    will-change: transform;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 #challenges {
@@ -376,12 +401,14 @@
 }
 
 #challenges h2, #solutions h2 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     margin-bottom: 2rem;
     text-align: center;
-    color: #ffd700;
+    color: #ffffff;
     position: relative;
     padding-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
 }
 
 #challenges h2::after, #solutions h2::after {
@@ -390,55 +417,49 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: linear-gradient(45deg, #ffd700, #ffa500);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(45deg, #4CAF50, #45a049);
     border-radius: 2px;
 }
 
 .challenge-item, .solution-item {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 1.5rem;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 2rem;
+    border-radius: 15px;
     margin-bottom: 1.5rem;
-    transition: transform 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: left;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    transform: translate3d(0, 0, 0);
-    will-change: transform;
+    backdrop-filter: blur(5px);
 }
 
 .challenge-item:hover, .solution-item:hover {
-    transform: translate3d(0, -5px, 0);
-    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .challenge-item h3, .solution-item h3 {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    color: #ffd700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.challenge-item h3::before, .solution-item h3::before {
-    content: '•';
-    color: #ffa500;
     font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #4CAF50;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .challenge-item p, .solution-item p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: var(--text-light);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ffffff;
     margin-bottom: 1rem;
-    text-align: center;
+    text-align: left;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .challenge-item ul, .solution-item ul {
@@ -450,35 +471,39 @@
 }
 
 .challenge-item li, .solution-item li {
-    padding: 0.5rem 0;
-    padding-left: 1.5rem;
+    padding: 0.8rem 0;
+    padding-left: 2rem;
     position: relative;
-    color: var(--text-light);
-    font-size: 1rem;
+    color: #ffffff;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .challenge-item li::before, .solution-item li::before {
     content: '→';
     position: absolute;
     left: 0;
-    color: #ffd700;
+    color: #4CAF50;
+    font-weight: bold;
 }
 
 .challenge-item .impact, .solution-item .benefits {
-    margin: 1rem auto;
-    padding: 1rem;
-    background: rgba(255, 215, 0, 0.1);
-    border-radius: 8px;
-    border-left: 3px solid #ffd700;
+    margin: 1.5rem auto;
+    padding: 1.5rem;
+    background: rgba(76, 175, 80, 0.1);
+    border-radius: 12px;
+    border-left: 4px solid #4CAF50;
     max-width: 600px;
-    text-align: center;
+    text-align: left;
 }
 
 .challenge-item .impact h4, .solution-item .benefits h4 {
-    color: #ffd700;
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-    text-align: center;
+    color: #4CAF50;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {
@@ -488,15 +513,23 @@
     }
 
     #challenges h2, #solutions h2 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     .challenge-item, .solution-item {
-        padding: 1.2rem;
+        padding: 1.5rem;
     }
 
     .challenge-item h3, .solution-item h3 {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
+    }
+
+    .challenge-item p, .solution-item p {
+        font-size: 1.1rem;
+    }
+
+    .challenge-item li, .solution-item li {
+        font-size: 1rem;
     }
 }
 
@@ -537,10 +570,14 @@
 }
 
 .welcome-section p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    max-width: 800px;
-    line-height: 1.6;
+    color: #f7f8fa;
+    margin: 1.2rem 0;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 1.7;
 }
 
 .get-started-button {

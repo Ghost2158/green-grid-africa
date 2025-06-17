@@ -7,35 +7,48 @@ const Solutions = () => {
             <div className="content-sections">
                 <section className="welcome-section">
                     <h1>Our Solutions</h1>
-                    <p>Innovative approaches to address Africa's energy challenges.</p>
+                    <p style={{ color: 'white', textShadow: 'none' }}>Innovative approaches to address Africa's energy challenges through data-driven decisions and sustainable practices.</p>
                 </section>
 
                 <section className="solutions-grid">
                     <div className="solution-item">
-                        <h3>Smart Grid Technology</h3>
-                        <p>Implementing advanced monitoring and control systems to optimize energy distribution and reduce losses.</p>
+                        <h3>Data-Driven Decisions</h3>
+                        <p>Empowering stakeholders with actionable insights for better energy management.</p>
                         <ul>
-                            <li>Real-time monitoring and control</li>
-                            <li>Automated fault detection</li>
-                            <li>Predictive maintenance systems</li>
+                            <li>Real-time energy demand analytics</li>
+                            <li>Predictive maintenance insights</li>
+                            <li>Customized reporting for NGOs and local leaders</li>
+                            <li>Performance optimization recommendations</li>
                         </ul>
                     </div>
                     <div className="solution-item">
-                        <h3>Renewable Energy Integration</h3>
-                        <p>Harnessing solar, wind, and other renewable sources to provide clean, sustainable power.</p>
+                        <h3>Sustainability</h3>
+                        <p>Supporting global sustainability goals through clean energy initiatives.</p>
                         <ul>
-                            <li>Solar mini-grids</li>
-                            <li>Hybrid power systems</li>
-                            <li>Energy storage solutions</li>
+                            <li>Alignment with UN SDG 7 (Affordable and Clean Energy)</li>
+                            <li>Reduced carbon footprint through renewable energy</li>
+                            <li>Community-focused sustainable practices</li>
+                            <li>Environmental impact monitoring</li>
                         </ul>
                     </div>
                     <div className="solution-item">
-                        <h3>Community Empowerment</h3>
-                        <p>Training and supporting local communities to maintain and benefit from sustainable energy systems.</p>
+                        <h3>Scalability</h3>
+                        <p>Flexible and adaptable solutions for growing energy needs.</p>
                         <ul>
-                            <li>Technical training programs</li>
-                            <li>Local maintenance teams</li>
-                            <li>Community ownership models</li>
+                            <li>Modular design for easy replication</li>
+                            <li>Cloud-based IoT and AI architecture</li>
+                            <li>Integration with mobile payments and alerts</li>
+                            <li>Open-source tools for community development</li>
+                        </ul>
+                    </div>
+                    <div className="solution-item">
+                        <h3>Global Goals Alignment</h3>
+                        <p>Contributing to United Nations Sustainable Development Goals.</p>
+                        <ul>
+                            <li>SDG 7: Affordable and Clean Energy</li>
+                            <li>SDG 9: Industry, Innovation and Infrastructure</li>
+                            <li>SDG 11: Sustainable Cities and Communities</li>
+                            <li>Cross-sector collaboration opportunities</li>
                         </ul>
                     </div>
                 </section>

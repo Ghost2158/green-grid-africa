@@ -40,8 +40,8 @@ const Dashboard = () => {
             <div className="content-sections">
                 <section className="welcome-section">
                     <h1>Welcome to GreenGrid Africa</h1>
-                    <p>Empowering communities through sustainable energy solutions and smart grid technology.</p>
-                    <p>Are you A Solar Mini-Grid Operator or A solar power  Consumer ? Press Get Started!! </p>
+                    <p style={{ color: 'white', textShadow: 'none' }}>Empowering communities through sustainable energy solutions and smart grid technology.</p>
+                    <p style={{ color: 'white', textShadow: 'none' }}>Are you A Solar Mini-Grid Operator or A solar power Consumer ? Press Get Started!! </p>
                     <button className="get-started-button" onClick={handleGetStarted}>
                         Get Started
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

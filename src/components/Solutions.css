@@ -2,6 +2,7 @@
     min-height: 100vh;
     padding: 2rem;
     background: linear-gradient(135deg, #0a192f, #0077b6);
+    color: #ffffff;
 }
 
 .content-sections {
@@ -17,45 +18,65 @@
 
 .welcome-section h1 {
     font-size: 2.5rem;
-    color: #2c3e50;
+    color: #ffffff;
     margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .welcome-section p {
     font-size: 1.2rem;
-    color: #666;
-    
+    color: #ffffff;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 
 .solutions-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     padding: 1rem;
 }
 
 .solution-item {
-    background: white;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
     padding: 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .solution-item:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .solution-item h3 {
-    color: #2c3e50;
+    color: #ffffff;
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.solution-item h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, #4CAF50, transparent);
 }
 
 .solution-item p {
-    color: #666;
+    color: #ffffff;
     margin-bottom: 1.5rem;
     line-height: 1.6;
+    opacity: 0.9;
 }
 
 .solution-item ul {
@@ -64,17 +85,19 @@
 }
 
 .solution-item li {
-    color: #666;
-    margin-bottom: 0.5rem;
+    color: #ffffff;
+    margin-bottom: 0.8rem;
     padding-left: 1.5rem;
     position: relative;
+    opacity: 0.9;
 }
 
 .solution-item li:before {
     content: "•";
-    color: #27ae60;
+    color: #4CAF50;
     position: absolute;
     left: 0;
+    font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {
@@ -86,7 +109,15 @@
         font-size: 2rem;
     }
 
+    .welcome-section p {
+        font-size: 1.1rem;
+    }
+
     .solutions-grid {
         grid-template-columns: 1fr;
+    }
+
+    .solution-item {
+        padding: 1.5rem;
     }
 } 

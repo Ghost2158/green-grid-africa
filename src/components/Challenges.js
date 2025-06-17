@@ -7,7 +7,7 @@ const Challenges = () => {
             <div className="content-sections">
                 <section className="welcome-section">
                     <h1>Challenges We Address</h1>
-                    <p>Understanding the key challenges in sustainable energy access across Africa.</p>
+                    <p style={{ color: 'white', textShadow: 'none' }}>Understanding the key challenges in sustainable energy access across Africa.</p>
                 </section>
 
                 <section className="challenges-grid">

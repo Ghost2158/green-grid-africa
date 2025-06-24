@@ -3,29 +3,24 @@ FROM node:18-alpine AS build
 
 WORKDIR /app
 
-# Copy package.json and package-lock.json
-COPY package-lock.json package.json ./
-
-# Install dependencies in the container
+COPY package*.json ./
 RUN npm install
 
-# Copy the rest of the application source code
 COPY . .
-
-# Build the app
 RUN npm run build
 
-# Stage 2: Serve the app with Nginx
+# Stage 2: Serve the build with a lightweight web server
 FROM nginx:alpine
 
-# Copy the build output from Stage 1
-COPY --from=build /app/dist /usr/share/nginx/html
+# Remove default nginx static assets
+RUN rm -rf /usr/share/nginx/html/*
 
-# Copy the custom Nginx configuration
+# Copy built React app from previous stage
+COPY --from=build /app/build /usr/share/nginx/html
+
+# Copy custom nginx config (optional, for SPA routing)
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Expose port 80
 EXPOSE 80
 
-# Start Nginx
 CMD ["nginx", "-g", "daemon off;"]

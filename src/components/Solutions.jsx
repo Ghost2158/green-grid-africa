@@ -6,7 +6,7 @@ const Solutions = () => {
         <div className="solutions-page">
             <div className="content-sections">
                 <section className="welcome-section">
-                    <h1>Our Solutions</h1>
+                    <h1 id="solutions-title">Our Solutions</h1>
                     <p>Innovative approaches to address Africa's energy challenges through data-driven decisions and sustainable practices.</p>
                 </section>
 
@@ -57,4 +57,4 @@ const Solutions = () => {
     );
 };
 
-export default Solutions; 
+export default Solutions;

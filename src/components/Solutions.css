@@ -42,9 +42,14 @@
 
 .solutions-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    padding: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2.5rem;
+    padding: 1.5rem 0; /* remove horizontal padding */
+    width: 100%;
+    box-sizing: border-box;
+    justify-items: center;
+    margin: 0 auto;
+    justify-content: center;
 }
 
 .solution-item {
@@ -137,6 +142,8 @@
         gap: 2.5rem;
         max-width: 1400px;
         margin: 0 auto;
+        padding: 1.5rem 0;
+        justify-content: center;
     }
     .solutions-grid .solution-item:first-child {
         grid-column: 1;
@@ -144,4 +151,4 @@
     .solutions-grid .solution-item:last-child {
         grid-column: 4;
     }
-} 
+}

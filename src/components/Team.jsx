@@ -64,7 +64,7 @@ const Team = () => {
     return (
         <div className="team-page">
             <div className="team-hero">
-                <h1>Our Team</h1>
+                <h1 id="team-title">Our Team</h1>
                 <p>Meet the passionate individuals driving sustainable energy solutions across Africa</p>
             </div>
 
@@ -92,4 +92,4 @@ const Team = () => {
     );
 };
 
-export default Team; 
+export default Team;

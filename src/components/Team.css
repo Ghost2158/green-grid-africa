@@ -37,74 +37,81 @@
 }
 
 .team-card {
-    background: linear-gradient(135deg, #0c709e7c 80%, #e3f6fc 100%);
-    border-radius: 18px;
+    background: #fff;
+    border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 6px 24px rgba(52, 152, 219, 0.10), 0 1.5px 6px rgba(44, 62, 80, 0.08);
+    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.18), 0 2px 8px rgba(52, 152, 219, 0.10);
     transition: transform 0.3s cubic-bezier(.4,2,.3,1), box-shadow 0.3s cubic-bezier(.4,2,.3,1), border 0.3s;
     display: flex;
     flex-direction: column;
-    border-top: 8px solid #4CAF50;
-    border-bottom: 2px solid #e3f6fc;
+    border: none;
+    position: relative;
+    min-height: 420px;
+    margin-top: 1.5rem;
 }
 
-.team-card:nth-child(2) { border-top-color: #0077b6; }
-.team-card:nth-child(3) { border-top-color: #f39c12; }
-.team-card:nth-child(4) { border-top-color: #e17055; }
-.team-card:nth-child(5) { border-top-color: #6c5ce7; }
-.team-card:nth-child(6) { border-top-color: #00b894; }
-.team-card:nth-child(7) { border-top-color: #fd79a8; }
+.team-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 8px;
+    background: linear-gradient(90deg, #4CAF50, #0077b6, #f39c12, #e17055, #6c5ce7, #00b894, #fd79a8);
+    border-radius: 24px 24px 0 0;
+    opacity: 0.85;
+}
 
 .team-card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 12px 32px rgba(52, 152, 219, 0.18), 0 4px 16px rgba(44, 62, 80, 0.12);
-    border-bottom: 2px solid #4CAF50;
+    transform: translateY(-12px) scale(1.04);
+    box-shadow: 0 16px 40px rgba(44, 62, 80, 0.22), 0 6px 18px rgba(52, 152, 219, 0.14);
 }
 
 .team-card-image {
     width: 100%;
-    height: 340px;
+    height: 340px; /* reverted to previous height */
     overflow: hidden;
     position: relative;
-    background: linear-gradient(135deg, #0a192fd9 60%, #0077b6cc 100%);
+    background: linear-gradient(135deg, #e3f6fc 60%, #0077b6cc 100%);
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 24px 24px 0 0;
+    box-shadow: 0 2px 12px rgba(44, 62, 80, 0.08);
 }
 
 .team-card-image img {
-    width: 90%;
-    height: 90%;
-    object-fit: contain;
+    width: 90%; /* reverted to previous width */
+    height: 90%; /* reverted to previous height */
+    object-fit: contain; /* reverted to previous fit */
     transition: transform 0.3s cubic-bezier(.4,2,.3,1);
-    border-radius: 12px;
-    background: #0c709e7c;
-    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.07);
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(44, 62, 80, 0.10);
+    border: 4px solid #fff;
 }
 
 .team-card:hover .team-card-image img {
-    transform: scale(1.06) rotate(-2deg);
+    transform: scale(1.08) rotate(-2deg);
 }
 
 .team-card-content {
-    padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    background: linear-gradient(135deg, #e3f6fc 80%, #f8fafc 100%);
 }
 
 .team-card-content h3 {
-    font-size: 1.45rem;
-    color: #fff;
+    font-size: 1.5rem;
+    color: #0077b6;
     margin-bottom: 0.3rem;
     font-weight: 700;
     letter-spacing: 0.5px;
 }
 
 .team-card-content h4 {
-    font-size: 1.08rem;
+    font-size: 1.1rem;
     color: #4CAF50;
     margin-bottom: 0.7rem;
     font-weight: 600;
@@ -112,31 +119,37 @@
 }
 
 .team-card-content p {
-    color: #e3f6fc;
+    color: #333;
     line-height: 1.6;
     margin-bottom: 1.2rem;
     flex-grow: 1;
-    font-size: 1.05rem;
-    opacity: 0.92;
+    font-size: 1.08rem;
+    opacity: 0.95;
 }
 
 .linkedin-link {
     display: inline-flex;
     align-items: center;
-    color: white;
+    color: #0077b6;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     transition: color 0.3s;
     margin-top: auto;
-    font-size: 1.08rem;
+    font-size: 1.12rem;
+    background: #e3f6fc;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    box-shadow: 0 1px 4px rgba(44, 62, 80, 0.07);
 }
 
 .linkedin-link svg {
     margin-right: 0.5rem;
+    color: #0077b6;
 }
 
 .linkedin-link:hover {
-    color: #005582;
+    color: #fff;
+    background: #0077b6;
 }
 
 @media (max-width: 768px) {
@@ -156,7 +169,15 @@
         grid-template-columns: 1fr;
     }
 
-    .team-card-image {
-        height: 350px;
+    .team-card {
+        min-height: 350px;
     }
-} 
+
+    .team-card-image {
+        height: 180px;
+    }
+
+    .team-card-content {
+        padding: 1.2rem 0.7rem 1rem 0.7rem;
+    }
+}

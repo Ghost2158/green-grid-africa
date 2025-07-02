@@ -131,10 +131,12 @@ const Dashboard = () => {
                 <div className="electric-line"></div>
             </div>
             <div className="welcome-section">
-                <h1>Welcome to GreenGrid</h1>
+                <h1 id="dashboard-title">GreenGrid Africa</h1>
                 <p>
-                    Transform your energy management with our cutting-edge platform.
-                    Optimize consumption, reduce costs, and embrace sustainability.
+                   Green Grid Africa is an AI-powered solar energy management platform that embraces IoT to optimise solar consumption and distribution in off-grid and underserved communities.
+                    It provides real-time monitoring, predictive analytics, and load optimization to ensure reliable, efficient, and sustainable power delivery.
+                    By empowering local operators with smart dashboards and actionable insights, it reduces energy waste and boosts community trust in clean energy systems. 
+                    Our mission is to accelerate access to affordable, intelligent solar infrastructure across Africa.
                 </p>
             </div>
 
@@ -164,4 +166,4 @@ const Dashboard = () => {
     );
 };
 
-export default Dashboard; 
+export default Dashboard;

@@ -6,6 +6,7 @@ import Dashboard from './components/Dashboard.jsx';
 import Challenges from './components/Challenges.jsx';
 import Solutions from './components/Solutions.jsx';
 import Team from './components/Team.jsx';
+import ScrollToTop from './components/ScrollToTop.jsx';
 import './App.css';
 
 // ✅ Vite environment variable — make sure VITE_API_URL is defined in .env
@@ -14,6 +15,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 function App() {
     return (
         <Router>
+            <ScrollToTop />
             <div className="app">
                 {/* Optional Debug: */}
                 {/* <p>API: {API_URL}</p> */}

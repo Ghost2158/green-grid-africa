@@ -6,7 +6,7 @@ const Challenges = () => {
         <div className="challenges-page">
             <div className="content-sections">
                 <section className="welcome-section">
-                    <h1>Challenges We Address</h1>
+                    <h1 id="challenges-title">Challenges We Address</h1>
                     <p>Understanding the key challenges in sustainable energy access across Africa.</p>
                 </section>
 
@@ -44,4 +44,4 @@ const Challenges = () => {
     );
 };
 
-export default Challenges; 
+export default Challenges;

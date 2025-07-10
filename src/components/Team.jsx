@@ -8,6 +8,25 @@ import joyImage from '../assets/JOY BIWOTT.png';
 import johnImage from '../assets/JOHN NYONGESA.png';
 import siahImage from '../assets/SIAH JESSICAH MUTHONI.jpeg';
 
+// Animated SVG background shape
+const TeamBG = () => (
+  <svg className="team-bg-svg" width="100%" height="180" viewBox="0 0 1440 180" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="teamGradient" x1="0" y1="0" x2="1440" y2="180" gradientUnits="userSpaceOnUse">
+        <stop stopColor="#00a859" />
+        <stop offset="0.5" stopColor="#ffd700" />
+        <stop offset="1" stopColor="#0077b6" />
+      </linearGradient>
+    </defs>
+    <path d="M0,80 Q360,180 720,80 T1440,80 V180 H0 Z" fill="url(#teamGradient)">
+      <animate attributeName="d" dur="7s" repeatCount="indefinite"
+        values="M0,80 Q360,180 720,80 T1440,80 V180 H0 Z;
+                M0,120 Q360,0 720,120 T1440,120 V180 H0 Z;
+                M0,80 Q360,180 720,80 T1440,80 V180 H0 Z" />
+    </path>
+  </svg>
+);
+
 const Team = () => {
     const teamMembers = [
         {
@@ -63,14 +82,15 @@ const Team = () => {
 
     return (
         <div className="team-page">
-            <div className="team-hero">
+            <TeamBG />
+            <div className="team-hero fade-in">
                 <h1 id="team-title">Our Team</h1>
-                <p>Meet the passionate individuals driving sustainable energy solutions across Africa</p>
+                <p>Meet the passionate individuals driving sustainable energy solutions across Africa.<br/>We are innovators, engineers, and dreamers united by a common goal.</p>
             </div>
 
             <div className="team-grid">
                 {teamMembers.map((member, index) => (
-                    <div key={index} className="team-card">
+                    <div key={index} className="team-card fade-in" style={{ animationDelay: `${0.1 + index * 0.1}s` }}>
                         <div className="team-card-image">
                             <img src={member.image} alt={member.name} />
                         </div>

@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
 
+// Remove ArrowUpIcon and scroll-to-top button
+
 const Footer = () => {
     return (
         <footer className="footer">
@@ -29,6 +31,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="footer-bottom">
+                {/* Removed scroll-to-top button */}
                 <p>Copyright © 2025 GreenGrid Africa. All rights Reserved</p>
             </div>
         </footer>

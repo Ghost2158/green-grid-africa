@@ -67,6 +67,73 @@ const Dashboard = () => {
             </div>
           </div>
         </section>
+
+        {/* Mission and Vision */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Mission */}
+              <div className="glass rounded-3xl p-8 border-l-4 border-grid-yellow hover:shadow-glow transition-all duration-500">
+                <h3 className="text-2xl font-bold text-grid-yellow mb-4">Our Mission</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  To accelerate access to affordable, intelligent solar infrastructure across Africa, empowering communities with sustainable, data-driven energy solutions.
+                </p>
+              </div>
+
+              {/* Vision */}
+              <div className="glass rounded-3xl p-8 border-l-4 border-grid-green hover:shadow-glow transition-all duration-500">
+                <h3 className="text-2xl font-bold text-grid-green mb-4">Our Vision</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  To become Africa's leading platform for smart, clean energy management, fostering a future where every community thrives through innovation and sustainability.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Download Presentation */}
+        <section className="py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="glass rounded-3xl p-12 text-center space-y-6 hover:shadow-elegant transition-all duration-500">
+              <h2 className="text-3xl md:text-4xl font-bold text-white">
+                Download Our Presentation
+              </h2>
+              <p className="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
+                Get a detailed overview of our platform, technology, and impact. Click below to download our latest PowerPoint presentation and learn more about GreenGrid Africa's mission and solutions.
+              </p>
+              <div className="pt-4">
+                <button className="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-grid-yellow to-grid-green text-black font-semibold rounded-2xl hover:shadow-glow transition-all duration-300 hover:scale-105 group">
+                  <svg className="w-5 h-5 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  <span>Download PowerPoint</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Partners */}
+        <section className="py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="glass rounded-3xl p-12 text-center space-y-6">
+              <h2 className="text-3xl font-bold text-grid-yellow">
+                Our Partners
+              </h2>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                We currently don't have partners yet, but we're actively seeking collaborations to accelerate sustainable energy solutions across Africa.
+              </p>
+              <div className="border-2 border-dashed border-grid-yellow/50 rounded-2xl p-8 mt-8">
+                <p className="text-grid-yellow font-medium text-xl">
+                  Coming Soon...
+                </p>
+                <p className="text-gray-400 mt-2">
+                  Your partnership could make a difference in African communities
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

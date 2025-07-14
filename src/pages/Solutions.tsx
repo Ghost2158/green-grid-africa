@@ -132,29 +132,6 @@ const Solutions = () => {
           </div>
         </section>
 
-        {/* Mission and Vision */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Mission */}
-              <div className="glass rounded-3xl p-8 border-l-4 border-grid-yellow hover:shadow-glow transition-all duration-500">
-                <h3 className="text-2xl font-bold text-grid-yellow mb-4">Our Mission</h3>
-                <p className="text-gray-300 leading-relaxed">
-                  To accelerate access to affordable, intelligent solar infrastructure across Africa, empowering communities with sustainable, data-driven energy solutions.
-                </p>
-              </div>
-
-              {/* Vision */}
-              <div className="glass rounded-3xl p-8 border-l-4 border-grid-green hover:shadow-glow transition-all duration-500">
-                <h3 className="text-2xl font-bold text-grid-green mb-4">Our Vision</h3>
-                <p className="text-gray-300 leading-relaxed">
-                  To become Africa's leading platform for smart, clean energy management, fostering a future where every community thrives through innovation and sustainability.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Empowering People & Innovation */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -182,45 +159,6 @@ const Solutions = () => {
                 <h3 className="text-2xl font-bold text-grid-green text-center">Innovative Solar Solutions</h3>
                 <p className="text-gray-300 text-center leading-relaxed">
                   Harnessing the sun with cutting-edge technology for a brighter, greener Africa.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Download Presentation */}
-        <section className="py-20">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="glass rounded-3xl p-12 text-center space-y-6 hover:shadow-elegant transition-all duration-500">
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
-                Download Our Presentation
-              </h2>
-              <p className="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
-                Get a detailed overview of our platform, technology, and impact. Click below to download our latest PowerPoint presentation and learn more about GreenGrid Africa's mission and solutions.
-              </p>
-              <div className="pt-4">
-                <button className="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-grid-yellow to-grid-green text-black font-semibold rounded-2xl hover:shadow-glow transition-all duration-300 hover:scale-105 group">
-                  <Download className="w-5 h-5 group-hover:animate-bounce" />
-                  <span>Download PowerPoint</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Sponsors & Partnerships */}
-        <section className="py-20">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="glass rounded-3xl p-12 text-center space-y-6">
-              <h2 className="text-3xl font-bold text-grid-yellow">
-                Our Sponsors & Partnerships
-              </h2>
-              <p className="text-lg text-gray-300 leading-relaxed">
-                We are currently seeking partnerships and sponsorships to accelerate our mission. If you are interested in supporting sustainable energy in Africa, please contact us!
-              </p>
-              <div className="border-2 border-dashed border-grid-yellow/50 rounded-2xl p-8 mt-8">
-                <p className="text-grid-yellow font-medium">
-                  No partnerships yet — your logo could be here!
                 </p>
               </div>
             </div>

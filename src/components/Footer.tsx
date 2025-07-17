@@ -33,7 +33,10 @@ const Footer = () => {
                 Challenges
               </Link>
               <Link to="/team" className="block text-gray-300 hover:text-grid-yellow transition-colors duration-300 text-sm">
-                Contact
+                Team
+              </Link>
+              <Link to="/contact" className="block text-gray-300 hover:text-grid-yellow transition-colors duration-300 text-sm">
+                Contact Us
               </Link>
             </div>
           </div>

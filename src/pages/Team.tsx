@@ -12,52 +12,59 @@ const Team = () => {
 
   const teamMembers = [
     {
+      name: "Dr. Lawrence Nderu",
+      role: "Principal Investigator",
+      description: "Providing visionary leadership, strategic direction, and academic expertise to guide the GreengridAfrica project toward impactful research and innovation in sustainable energy across Africa.",
+      image: "/src/assets/Dr Lawrence Nderu.png",
+      linkedin: "https://www.linkedin.com/in/dr-lawrence-nderu/"
+    },
+    {
       name: "Michelle Mwangi",
       role: "Project Lead & Backend Developer",
       description: "Leading the project with expertise in backend development and project management.",
-      image: "/lovable-uploads/placeholder-profile-1.jpg",
-      linkedin: "#"
+      image: "/src/assets/MICHELLE MWANGI.png",
+      linkedin: "http://www.linkedin.com/in/benedict-mutua-451a68367"
     },
     {
       name: "Benedict Mutua Mutuku",
       role: "IoT Engineer",
       description: "Specializing in IoT solutions and hardware integration for smart energy systems.",
-      image: "/lovable-uploads/placeholder-profile-2.jpg",
-      linkedin: "#"
+      image: "/src/assets/BENEDICT MUTUA.png",
+      linkedin: "https://www.linkedin.com/in/brian-kipkemboi-209a0636a/"
     },
     {
       name: "Sheldon Jahonga",
       role: "UI/UX and Frontend Development Specialist",
       description: "Creating intuitive and engaging user interfaces for our energy management platform.",
-      image: "/lovable-uploads/placeholder-profile-3.jpg",
-      linkedin: "#"
+      image: "/src/assets/JAHONGA SHELDON.png",
+      linkedin: "https://www.linkedin.com/in/michelle-mwangi-0b2a8626b?"
     },
     {
       name: "Brian Kipkemboi",
       role: "AI/ML Specialist",
       description: "Developing advanced AI and machine learning solutions for energy optimization.",
-      image: "/lovable-uploads/placeholder-profile-4.jpg",
-      linkedin: "#"
+      image: "/src/assets/BRIAN KIPKEMBOI.png",
+      linkedin: "https://www.linkedin.com/in/jesca-muthoni-b6a16a36b?"
     },
     {
       name: "Joy Biwott",
-      role: "Fiware Integrator",
-      description: "Expert in Fiware integration and smart city solutions.",
-      image: "/lovable-uploads/placeholder-profile-5.jpg",
-      linkedin: "#"
+      role: "Backend Developer ",
+      description: "Designs and implements robust backend systems, ensuring reliable data management and seamless integration for smart energy solutions.",
+      image: "/src/assets/JOY BIWOTT.png",
+      linkedin: "https://www.linkedin.com/in/john-nyongesa-b3a523369?"
     },
     {
       name: "John Nyongesa",
       role: "Data Analyst",
       description: "Analyzing energy data to drive insights and optimization strategies.",
-      image: "/lovable-uploads/placeholder-profile-6.jpg",
-      linkedin: "#"
+      image: "/src/assets/JOHN NYONGESA.png",
+      linkedin: "https://www.linkedin.com/in/sheldon-jahonga-06b16327a"
     },
     {
       name: "Siah Jessicah Muthoni",
       role: "Social Media Manager",
       description: "Managing our social media presence and digital communications to engage with our community.",
-      image: "/lovable-uploads/placeholder-profile-7.jpg",
+      image: "/src/assets/SIAH JESSICAH MUTHONI.jpeg",
       linkedin: "#"
     }
   ];
@@ -110,12 +117,13 @@ const Team = () => {
                 >
                   {/* Profile Image */}
                   <div className="relative mb-6">
-                    <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-grid-yellow/20 to-grid-green/20 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300">
-                      {/* Placeholder for profile image */}
-                      <div className="w-full h-full bg-grid-blue-light rounded-full flex items-center justify-center">
-                        <Users className="w-16 h-16 text-grid-yellow/70" />
-                      </div>
-                    </div>
+                  <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-grid-yellow/20 to-grid-green/20 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover rounded-full border-4 border-grid-yellow shadow-lg"
+                    />
+                  </div>
                     {/* Glow effect */}
                     <div className="absolute inset-0 rounded-full bg-gradient-to-br from-grid-yellow/10 to-grid-green/10 scale-0 group-hover:scale-110 transition-transform duration-500" />
                   </div>

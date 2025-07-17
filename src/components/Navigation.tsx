@@ -12,14 +12,15 @@ const Navigation = () => {
     { name: 'CHALLENGES', path: '/challenges' },
     { name: 'SOLUTIONS', path: '/solutions' },
     { name: 'TEAM', path: '/team' },
+    { name: 'CONTACT US', path: '/contact' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40 bg-black/80 backdrop-blur-md border-b border-grid-blue-light">
+    <nav className="fixed top-0 left-0 right-0 z-40 bg-black/80 backdrop-blur-md border-b border-grid-blue-light h-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
             <div className="relative">
@@ -43,6 +44,9 @@ const Navigation = () => {
                     ? 'text-grid-yellow'
                     : 'text-white hover:text-grid-yellow'
                 }`}
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
               >
                 {item.name}
                 {isActive(item.path) && (
@@ -76,7 +80,10 @@ const Navigation = () => {
                       ? 'text-grid-yellow bg-grid-blue-light/50'
                       : 'text-white hover:text-grid-yellow hover:bg-grid-blue-light/30'
                   }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
                 >
                   {item.name}
                 </Link>

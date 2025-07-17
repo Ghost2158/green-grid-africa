@@ -9,7 +9,8 @@ import Dashboard from "./pages/Dashboard";
 import Challenges from "./pages/Challenges";
 import Solutions from "./pages/Solutions";
 import Team from "./pages/Team";
-import NotFound from "./pages/NotFound";
+// NotFound import removed
+import Contact from './pages/Contact'; // Importing Contact page
 
 const queryClient = new QueryClient();
 
@@ -35,8 +36,9 @@ const App = () => {
             <Route path="/challenges" element={<Challenges />} />
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/team" element={<Team />} />
+            <Route path="/contact" element={<Contact />} /> {/* Adding Contact route */}
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
+             {/* NotFound route removed */}
           </Routes>
         </BrowserRouter>
       </TooltipProvider>

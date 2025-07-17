@@ -1,4 +1,12 @@
 import { useEffect, useState } from 'react';
+import drLawrence from '@/assets/Dr Lawrence Nderu.png';
+import michelleMwangi from '@/assets/MICHELLE MWANGI.png';
+import benedictMutua from '@/assets/BENEDICT MUTUA.png';
+import jahongaSheldon from '@/assets/JAHONGA SHELDON.png';
+import brianKipkemboi from '@/assets/BRIAN KIPKEMBOI.png';
+import joyBiwott from '@/assets/JOY BIWOTT.png';
+import johnNyongesa from '@/assets/JOHN NYONGESA.png';
+import siahJessicah from '@/assets/SIAH JESSICAH MUTHONI.jpeg';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Linkedin, Users } from 'lucide-react';
@@ -15,56 +23,56 @@ const Team = () => {
       name: "Dr. Lawrence Nderu",
       role: "Principal Investigator",
       description: "Providing visionary leadership, strategic direction, and academic expertise to guide the GreengridAfrica project toward impactful research and innovation in sustainable energy across Africa.",
-      image: "/src/assets/Dr Lawrence Nderu.png",
+      image: drLawrence,
       linkedin: "https://www.linkedin.com/in/dr-lawrence-nderu/"
     },
     {
       name: "Michelle Mwangi",
       role: "Project Lead & Backend Developer",
       description: "Leading the project with expertise in backend development and project management.",
-      image: "/src/assets/MICHELLE MWANGI.png",
+      image: michelleMwangi,
       linkedin: "http://www.linkedin.com/in/benedict-mutua-451a68367"
     },
     {
       name: "Benedict Mutua Mutuku",
       role: "IoT Engineer",
       description: "Specializing in IoT solutions and hardware integration for smart energy systems.",
-      image: "/src/assets/BENEDICT MUTUA.png",
+      image: benedictMutua,
       linkedin: "https://www.linkedin.com/in/brian-kipkemboi-209a0636a/"
     },
     {
       name: "Sheldon Jahonga",
       role: "UI/UX and Frontend Development Specialist",
       description: "Creating intuitive and engaging user interfaces for our energy management platform.",
-      image: "/src/assets/JAHONGA SHELDON.png",
+      image: jahongaSheldon,
       linkedin: "https://www.linkedin.com/in/michelle-mwangi-0b2a8626b?"
     },
     {
       name: "Brian Kipkemboi",
       role: "AI/ML Specialist",
       description: "Developing advanced AI and machine learning solutions for energy optimization.",
-      image: "/src/assets/BRIAN KIPKEMBOI.png",
+      image: brianKipkemboi,
       linkedin: "https://www.linkedin.com/in/jesca-muthoni-b6a16a36b?"
     },
     {
       name: "Joy Biwott",
       role: "Backend Developer ",
       description: "Designs and implements robust backend systems, ensuring reliable data management and seamless integration for smart energy solutions.",
-      image: "/src/assets/JOY BIWOTT.png",
+      image: joyBiwott,
       linkedin: "https://www.linkedin.com/in/john-nyongesa-b3a523369?"
     },
     {
       name: "John Nyongesa",
       role: "Data Analyst",
       description: "Analyzing energy data to drive insights and optimization strategies.",
-      image: "/src/assets/JOHN NYONGESA.png",
+      image: johnNyongesa,
       linkedin: "https://www.linkedin.com/in/sheldon-jahonga-06b16327a"
     },
     {
       name: "Siah Jessicah Muthoni",
       role: "Social Media Manager",
       description: "Managing our social media presence and digital communications to engage with our community.",
-      image: "/src/assets/SIAH JESSICAH MUTHONI.jpeg",
+      image: siahJessicah,
       linkedin: "#"
     }
   ];

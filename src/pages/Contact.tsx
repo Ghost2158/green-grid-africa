@@ -1,4 +1,8 @@
 import { useState, useEffect } from 'react';
+import solarAfrica1 from '@/assets/solar-africa-1.jpg';
+import solarAfrica2 from '@/assets/solar-africa-2.jpg';
+import solarAfrica3 from '@/assets/solar-africa-3.jpg';
+import solarBackground from '@/assets/solar-background.jpg';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
@@ -16,10 +20,10 @@ const Contact = () => {
 
   // HD images for left side (solar, african people, etc.)
   const images = [
-    '/src/assets/solar-africa-1.jpg',
-    '/src/assets/solar-africa-2.jpg',
-    '/src/assets/solar-africa-3.jpg',
-    '/src/assets/solar-background.jpg',
+    solarAfrica1,
+    solarAfrica2,
+    solarAfrica3,
+    solarBackground,
   ];
   const [imgIdx, setImgIdx] = useState(0);
   useEffect(() => {

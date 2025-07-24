@@ -31,42 +31,42 @@ const Team = () => {
       role: "Project Lead & Backend Developer",
       description: "Leading the project with expertise in backend development and project management.",
       image: michelleMwangi,
-      linkedin: "http://www.linkedin.com/in/benedict-mutua-451a68367"
+      linkedin: "https://www.linkedin.com/in/michelle-mwangi-0b2a8626b/"
     },
     {
       name: "Benedict Mutua Mutuku",
       role: "IoT Engineer",
       description: "Specializing in IoT solutions and hardware integration for smart energy systems.",
       image: benedictMutua,
-      linkedin: "https://www.linkedin.com/in/brian-kipkemboi-209a0636a/"
+      linkedin: "https://www.linkedin.com/in/benedict-mutua-451a68367/"
     },
     {
       name: "Sheldon Jahonga",
       role: "UI/UX and Frontend Development Specialist",
       description: "Creating intuitive and engaging user interfaces for our energy management platform.",
       image: jahongaSheldon,
-      linkedin: "https://www.linkedin.com/in/michelle-mwangi-0b2a8626b?"
+      linkedin: "https://www.linkedin.com/in/sheldon-jahonga-06b16327a/"
     },
     {
       name: "Brian Kipkemboi",
       role: "AI/ML Specialist",
       description: "Developing advanced AI and machine learning solutions for energy optimization.",
       image: brianKipkemboi,
-      linkedin: "https://www.linkedin.com/in/jesca-muthoni-b6a16a36b?"
+      linkedin: "https://www.linkedin.com/in/brian-kipkemboi-209a0636a/"
     },
     {
       name: "Joy Biwott",
       role: "Backend Developer ",
       description: "Designs and implements robust backend systems, ensuring reliable data management and seamless integration for smart energy solutions.",
       image: joyBiwott,
-      linkedin: "https://www.linkedin.com/in/john-nyongesa-b3a523369?"
+      linkedin: "https://www.linkedin.com/in/joy-biwott-123456789/"
     },
     {
       name: "John Nyongesa",
       role: "Data Analyst",
       description: "Analyzing energy data to drive insights and optimization strategies.",
       image: johnNyongesa,
-      linkedin: "https://www.linkedin.com/in/sheldon-jahonga-06b16327a"
+      linkedin: "https://www.linkedin.com/in/john-nyongesa-b3a523369/"
     },
     {
       name: "Siah Jessicah Muthoni",

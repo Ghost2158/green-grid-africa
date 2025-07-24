@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Plus, Grid, Leaf } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Challenges = () => {
+  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -140,7 +142,10 @@ const Challenges = () => {
                 Join us in addressing these critical challenges and building a sustainable energy future for Africa.
               </p>
               <div className="pt-4">
-                <button className="px-8 py-4 bg-gradient-to-r from-grid-yellow to-grid-green text-black font-semibold rounded-2xl hover:shadow-glow transition-all duration-300 hover:scale-105">
+                <button
+                  className="px-8 py-4 bg-gradient-to-r from-grid-yellow to-grid-green text-black font-semibold rounded-2xl hover:shadow-glow transition-all duration-300 hover:scale-105"
+                  onClick={() => navigate('/solutions')}
+                >
                   Learn About Our Solutions
                 </button>
               </div>
